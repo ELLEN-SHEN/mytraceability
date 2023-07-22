@@ -1,0 +1,29 @@
+version: 1
+accounts:
+  - name: alice
+    coins: ["20000token", "200000000stake"]
+  - name: drugmanu
+    coins: ["10000token", "100000000stake"]
+validators:
+  - name: alice
+    bonded: "100000000stake"
+    app:
+      api:
+        address: :1318
+      grpc:
+        address: :9092
+      grpc-web:
+        address: :9093
+    config:
+      p2p:
+        laddr: :26658
+      rpc:
+        laddr: :26659
+        pprof_laddr: :6061
+    home: $HOME/.manufacturer
+faucet:
+  name: drugmanu
+  coins: ["5token", "100000stake"]
+  host: :4501
+genesis:
+  chain_id: manufacturer

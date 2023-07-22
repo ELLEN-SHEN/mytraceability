@@ -1,0 +1,21 @@
+syntax = "proto3";
+package traceability.traceability;
+
+import "gogoproto/gogo.proto";
+import "traceability/traceability/params.proto";
+import "traceability/traceability/traceinfo.proto";
+import "traceability/traceability/phtraceinfo.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "traceability/x/traceability/types";
+
+// GenesisState defines the traceability module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  string port_id = 2;
+  repeated Traceinfo traceinfoList = 3 [(gogoproto.nullable) = false];
+  uint64 traceinfoCount = 4;
+  repeated Phtraceinfo phtraceinfoList = 5 [(gogoproto.nullable) = false];
+  uint64 phtraceinfoCount = 6;
+  // this line is used by starport scaffolding # genesis/proto/state
+}

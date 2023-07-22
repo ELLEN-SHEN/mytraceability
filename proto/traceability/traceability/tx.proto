@@ -1,0 +1,71 @@
+syntax = "proto3";
+package traceability.traceability;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "traceability/x/traceability/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc SendRequestShip(MsgSendRequestShip) returns (MsgSendRequestShipResponse);
+  rpc SendSendDrug(MsgSendSendDrug) returns (MsgSendSendDrugResponse);
+  rpc SendDestroyDrug(MsgSendDestroyDrug) returns (MsgSendDestroyDrugResponse);
+  rpc SendAllowShip(MsgSendAllowShip) returns (MsgSendAllowShipResponse);
+  rpc SendForbidShip(MsgSendForbidShip) returns (MsgSendForbidShipResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgSendRequestShip {
+  string creator = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  string dic = 5;
+  string drugprof = 6;
+  string termofvalidity = 7;
+  string pharmacy = 8;
+}
+
+message MsgSendRequestShipResponse {
+}
+message MsgSendSendDrug {
+  string creator = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  uint64 id = 5;
+}
+
+message MsgSendSendDrugResponse {
+}
+message MsgSendDestroyDrug {
+  string creator = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  uint64 id = 5;
+}
+
+message MsgSendDestroyDrugResponse {
+}
+message MsgSendAllowShip {
+  string creator = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  uint64 id = 5;
+}
+
+message MsgSendAllowShipResponse {
+}
+message MsgSendForbidShip {
+  string creator = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  uint64 id = 5;
+}
+
+message MsgSendForbidShipResponse {
+}
+// this line is used by starport scaffolding # proto/tx/message

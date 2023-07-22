@@ -1,0 +1,16 @@
+version: 1
+accounts:
+  - name: alice
+    coins: ["20000token", "200000000stake"]
+  - name: drugadmins
+    coins: ["10000token", "100000000stake"]
+validators:
+  - name: alice
+    bonded: "100000000stake"
+    home: $HOME/.drugadmin
+faucet:
+  name: drugadmins
+  coins: ["5token", "100000stake"]
+  host: 0.0.0.0:4500
+genesis:
+  chain_id: drugadmin

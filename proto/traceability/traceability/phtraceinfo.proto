@@ -1,0 +1,16 @@
+syntax = "proto3";
+package traceability.traceability;
+
+option go_package = "traceability/x/traceability/types";
+
+message Phtraceinfo {
+  uint64 id = 1;
+  string dic = 2; 
+  string drugprof = 3; 
+  string pharmacy = 4; 
+  string termofvalidity = 5; 
+  string customers = 6; 
+  string state = 7; 
+  string manufacturer = 8; 
+  
+}
